@@ -1,0 +1,30 @@
+.pane{
+	padding: 1em;
+	height: 500px;
+}
+
+.type-item {
+	display: block;
+}
+
+.item-img {
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+}
+
+.item-chk {
+	width: 20px;
+	height: 20px;
+	margin-top: 3px;
+}
+
+label {
+	margin: 0;
+}
+
+.type-panel {
+	height: 100%;
+	padding: 10px;
+	overflow-y: auto;
+}

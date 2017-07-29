@@ -1,0 +1,31 @@
+<div style="height: 100%;" (click)="onTouch($event)">
+	<div  class="col-sm-10" style="height: 100%; padding: 0;">
+		<div id="analysis-graph" style="height: 100%;"></div>
+	</div>
+	<div class="col-sm-2" style="height: 100%; padding: 0;">
+		<div class="type-panel">
+			<ul style="padding: 0;">
+				<li class="type-item" *ngFor="let item of typeList">
+					<img class="item-img" src="{{item.image}}" onerror="this.src='assets/images/no_theme.png'">
+					<md-checkbox class="item-chk" [(ngModel)]="item.isSelected" (change)="refreshGraph(item)">{{item.type}}</md-checkbox>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="detail-table" [style.left]="left" [style.top]="top" *ngIf="visible">
+	<div class="table-container">
+		<div class="table-head">Node : {{selectedNode.label}}<div class="close-button fa fa-close" (click)="onCloseTable()"></div></div>
+		<table style="width: 100%">
+			<tr class="table-row" *ngFor="let data of showData; let idx=index;" [class.even]="idx % 2 == 0" [class.odd]="idx % 2 != 0">
+				<td style="width: 40%; border: 1px solid grey;">{{data.key}}</td>
+				<td style="width: 60%; border: 1px solid grey;">{{data.value}}</td>
+			</tr>
+
+			<tr class="table-last" *ngIf="isMore">
+				<td colspan="2" class="more-option" (click)="onShowMore(5)"><div class="more-button">Show More..</div></td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+<ul class="tabs-container">
+	<li *ngFor="let tab of tabs" class="tab-item-container">
+		<div class="tab-item" (click)="selectTab(tab)" [class.active]="tab.active">
+			<a href="#">{{tab.title}}</a>
+		</div>
+	</li>
+
+	<div class="bottom-line"></div>
+</ul>
+<ng-content></ng-content>

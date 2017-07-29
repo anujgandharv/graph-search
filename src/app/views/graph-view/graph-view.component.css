@@ -1,0 +1,104 @@
+.pane{
+	padding: 1em;
+	height: 500px;
+}
+
+.type-item {
+	display: block;
+}
+
+.item-img {
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+}
+
+.item-chk {
+	width: 20px;
+	height: 20px;
+	margin-top: 3px;
+}
+
+label {
+	margin: 0;
+}
+
+.type-panel {
+	height: 100%;
+	padding: 10px;
+	overflow-y: auto;
+}
+
+.detail-table {
+	position: absolute;
+	padding: 10px;
+	width: 300px;
+	z-index: 100;
+}
+
+.table-container {
+	width: 100%;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 1px grey;
+	background: white;	
+}
+
+.table-head {
+	background: grey;
+	color: white;
+	padding: 10px;
+	padding-left: 50px;
+	font-size: 18px;
+	border-radius: 4px 4px 0 0;
+}
+
+.table-row {
+	text-align: center;
+}
+
+.table-row td {
+	padding: 5px;
+}
+
+.table-last {
+	border-radius: 0 0 4px 4px;	
+}
+
+.more-option {
+	text-align: center;
+	width: 100%;
+}
+
+.more-button {
+	color: #403F90;
+	cursor: pointer;
+}
+
+.more-button:hover {
+	color: #8080DE;
+}
+
+.even {
+    background: #DEDEDE;	
+}
+
+.odd {
+    background: #EFEFEF;
+}
+
+.close-button {
+	float: right;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 6px;
+    color: grey;
+    text-align: center;
+	padding-top: 1px;
+	cursor: pointer;
+}
+
+.close-button:hover {
+	color: #333;
+}

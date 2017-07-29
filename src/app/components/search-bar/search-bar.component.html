@@ -1,0 +1,25 @@
+<div class="search-container">
+    <input #filter 
+        placeholder="{{placeholder}}"
+        (change)="doSearch()"
+        (focus)="focusIn()"
+        (focusout)="focusOut()"
+        [style.background]="backColor"
+        [style.color]="foreColor"
+        [(ngModel)]="searchText"
+        [style.font-style]="fontStyle"
+        (keydown)="keyDown($event)"
+        (ngModelChange)="doSearch()">
+
+     <span class="search-icon fa fa-search" (click)="selectItem(searchText)"></span> 
+     
+</div>
+
+<ul *ngIf="isVisible" (click)="selectItem('ddd')">
+    <li *ngFor="let item of filteredData; let idx = index;"
+        (mousedown)="selectItem(item)"
+        (mouseover)="overItem(idx)"
+        [style.background]="isSelected(idx)">
+        {{item}}
+    </li>
+</ul>

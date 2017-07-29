@@ -1,0 +1,21 @@
+<h1 class="title">
+	{{title}}
+</h1>
+
+<div class="search-bar-container">
+	<search-bar class="search-bar" (onSearch)="search($event)"></search-bar>
+</div>
+
+<tabs class="container">
+	<tab [tabTitle]="'Graph'">
+		<graph-view *ngIf="isLoaded" style="height: 100%;" [edges]="edges" [nodes]="nodes"></graph-view>
+	</tab>
+
+	<tab [tabTitle]="'Tabular'">
+		<tabular-view *ngIf="isLoaded" style="height: 100%;" [nodes]="nodes"></tabular-view>
+	</tab>
+
+	<tab [tabTitle]="'Relationships'">
+		<relationship-view *ngIf="isLoaded" style="height: 100%;" [nodes]="nodes" [edges]="edges"></relationship-view>
+	</tab>
+</tabs>

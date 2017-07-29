@@ -1,0 +1,24 @@
+<div>
+
+	<div style="font-size: 20px;">
+		{{title}}
+	</div>
+
+	<div>
+		<md-input-container>
+			<input mdInput placeholder="Key" [(ngModel)]="data.key">
+		</md-input-container>
+	</div>
+
+	<div>
+		<md-input-container>
+			<input mdInput placeholder="Value" [(ngModel)]="data.value">
+		</md-input-container>
+	</div>
+
+	<md-dialog-actions>
+		<button md-button [md-dialog-close]="data">{{data.isAdd ? 'Add' : 'Update'}}</button>
+		<button md-button [md-dialog-close]="false">Cancel</button>
+	</md-dialog-actions>
+
+</div>

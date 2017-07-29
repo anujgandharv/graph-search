@@ -1,0 +1,64 @@
+<div style="height: 100%;">
+
+	<div class="function-panel">
+		<button md-raised-button (click)="onAddRelation()">+ Relationship</button>
+	</div>
+
+	<div class="relation-panel">
+
+		<div class="table-head">
+			<div class="table-col" style="width: 10%;"></div>
+			<div class="table-col" style="width: 35%;">From</div>
+			<div class="table-col" style="width: 35%;">To</div>
+			<div class="table-col" style="width: 20%;">Relationship</div>
+		</div>
+
+		<div *ngFor="let row of dataList; let idx=index;">
+			
+			<div class="table-row" [class.even]="idx % 2 == 0" [class.odd]="idx % 2 != 0">
+				<div class="table-col" style="width: 10%;">
+					<div class="button button-expand" (click)="onExpand(row)" *ngIf="!row.isExpanded">
+						<span style="font-size: 16px;" class="fa fa-plus-square-o"></span>
+					</div>
+					<div class="button button-expand" (click)="onCollapse(row)" *ngIf="row.isExpanded">					
+						<span style="font-size: 16px;" class="fa fa-minus-square-o"></span>
+					</div>
+					<div class="button button-action" (click)="onEditRelation(row)">					
+						<span style="font-size: 16px;" class="fa fa-pencil"></span>
+					</div>
+					<div class="button button-action" (click)="onDeleteRelation(row)">					
+						<span style="font-size: 16px; color: red;" class="fa fa-trash-o"></span>
+					</div>
+					<!-- <button md-button class="md-primary" (click)="(row)"><span class="fa fa-"></span></button>
+					<button md-button (click)="(row, idx)"><span class="fa "></span></button> -->
+				</div>
+				<div class="table-col" style="width: 35%">{{row.from}}</div>
+				<div class="table-col" style="width: 35%">{{row.to}}</div>
+				<div class="table-col" style="width: 20%">{{row.label}}</div>				
+			</div>
+
+			<div class="sub-table table-row" *ngIf="row.isExpanded">
+
+				<div class="table-head">
+					<div class="table-col" style="width: 25%"><button md-raised-button style="color: black;" (click)="onAddData(row)">+ Data</button></div>
+					<div class="table-col" style="width: 25%">Key</div>
+					<div class="table-col" style="width: 25%">Value</div>
+				</div>
+
+				 <div class="details-row" *ngFor="let item of row.data; let idx2=index;" [class.even1]="idx2 % 2 == 0" [class.odd1]="idx2 % 2 != 0">
+					<div class="table-col" style="width: 25%">
+						<button md-button class="md-primary" (click)="onEditItem(row, item)"><span class="fa fa-pencil"></span></button>
+						<button md-button style="color: red;" (click)="onDeleteItem(row, item)"><span class="fa fa-trash-o"></span></button>						
+					</div>
+					<div class="table-col" style="width: 25%">{{item.key}}</div>
+					<div class="table-col" style="width: 25%">{{item.value}}</div>				
+				</div> 
+
+				<div class="odd1 details-row" *ngIf="row.data.length == 0">
+					<div class="table-col" style="width: 100%; text-align: center; padding: 10px; font-size: 16px; display: block;">No Data!</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

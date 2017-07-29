@@ -1,0 +1,78 @@
+.pane{
+	padding: 1em;
+	height: 500px;
+}
+
+.node-item {
+	display: block;
+	cursor: pointer;
+}
+
+.item-content {
+	padding: 20px;
+	width: calc(100% - 8px);
+}
+
+.arrow {
+	width: 100%;
+	height: 3px;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.node-item:hover .arrow {
+	background: #C0C0FF;
+	border-bottom: 0px solid #DEDEDE;
+}
+
+label {
+	margin: 0;
+}
+
+.function-panel {
+	width: 100%;
+	text-align: right;
+	padding: 10px;
+	height: 56px;
+	background: #F5F5F5;
+}
+
+.node-panel {
+	height: 100%;
+	padding: 10px;
+	overflow-y: auto;
+}
+
+.active {
+	background: #FFC0C0;
+	border-bottom: 0px solid #DEDEDE;
+}
+
+.node-table {
+	width: 100%;
+}
+
+.table-head {
+	height: 50px;
+    background: grey;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+.table-body {
+	height: 40px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.even {
+    background: #EFEFEF;	
+}
+
+.odd {
+    background: #FFF;	
+}
+
+.fa {
+	font-size: 20px;
+}

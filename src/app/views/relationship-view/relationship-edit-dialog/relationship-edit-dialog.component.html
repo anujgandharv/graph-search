@@ -1,0 +1,18 @@
+<div>
+
+	<div style="font-size: 20px;">
+		Update Relationship
+	</div>
+
+	<div>
+		<md-input-container>
+			<input mdInput placeholder="Relationship" [(ngModel)]="data.label">
+		</md-input-container>
+	</div>
+
+	<md-dialog-actions>
+		<button md-button [md-dialog-close]="data">Update</button>
+		<button md-button [md-dialog-close]="false">Cancel</button>
+	</md-dialog-actions>
+
+</div>

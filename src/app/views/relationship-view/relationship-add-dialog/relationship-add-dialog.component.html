@@ -1,0 +1,28 @@
+<div>
+
+	<div style="font-size: 20px;">
+		Add New Relationship
+	</div>
+
+	<div>
+		<md-input-container>
+			<input mdInput placeholder="Source of Relationship" [(ngModel)]="data.from">
+		</md-input-container>
+	</div>
+	<div>
+		<md-input-container>
+			<input mdInput placeholder="Target of Relationship" [(ngModel)]="data.to">
+		</md-input-container>
+	</div>
+	<div>
+		<md-input-container>
+			<input mdInput placeholder="Relationship Type" [(ngModel)]="data.label">
+		</md-input-container>
+	</div>
+
+	<md-dialog-actions>
+		<button md-button [md-dialog-close]="data">Update</button>
+		<button md-button [md-dialog-close]="false">Cancel</button>
+	</md-dialog-actions>
+
+</div>

@@ -1,0 +1,38 @@
+<div style="height: 100%;">
+	<div class="col-sm-2" style="height: 100%; padding: 0;">
+
+		<div class="function-panel">
+			<button md-raised-button (click)="onAdd()">+ Node</button>
+		</div>
+
+		<div class="node-panel" style="height: calc(100% - 56px);">
+			<ul style="padding: 0;">
+				<li *ngFor="let item of nodes" (click)="onNodeItem(item)" class="node-item">
+					<div class="item-content"><div>{{item.label}}</div></div>
+					<div class="arrow" [class.active]="item.id==activeItem"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="col-sm-10" style="height: 100%; padding: 0; border-left: 10px solid grey;">
+		<div class="node-panel">
+			<table class="node-table">
+				
+				<tr class="table-head">
+					<td style="width: 10%;"></td>
+					<td style="width: 10%;"></td>
+					<td style="width: 30%;">Key</td>
+					<td style="width: 50%;">Value</td>
+				</tr>
+
+				<tr class="table-body" *ngFor="let row of activeData; let idx=index;" [class.even]="idx % 2 == 0" [class.odd]="idx % 2 != 0">
+					<td><button md-button class="md-primary" (click)="onEdit(row)"><span class="fa fa-pencil"></span></button></td>
+					<td><button md-button style="color: red;" (click)="onDelete(row, idx)"><span class="fa fa-trash-o"></span></button></td>
+					<td>{{row.key}}</td>
+					<td>{{row.value}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
