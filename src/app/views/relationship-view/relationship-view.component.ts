@@ -193,6 +193,7 @@ export class RelationshipViewComponent {
 					id: row.id,
 					key: item.key,
 					value: item.value,
+					action: "edit"
 				};
 
 				// Get nodes and edges..
@@ -226,6 +227,7 @@ export class RelationshipViewComponent {
 					id: row.id,
 					key: item.key,
 					value: item.value,
+					action: "delete"
 				};
 
 				// Get nodes and edges..
@@ -262,6 +264,7 @@ export class RelationshipViewComponent {
 					id: row.id,
 					key_name: result.key,
 					key_value: result.value,
+					action: "add"
 				};
 
 				// Get nodes and edges..

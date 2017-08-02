@@ -55,13 +55,12 @@ export class TabularViewComponent {
 
 	onAdd() {
 		var add = {
-			isAdd: true,
 			key: "",
 			value: "",
 		};
 
 		let dialogRef = this.dialog.open(TabularEditDialog, {
-			data: add,
+			data: add
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			if(result != false && result != undefined) {
@@ -71,12 +70,15 @@ export class TabularViewComponent {
 					type: this.activeNode.type,
 					key_name: result.key,
 					key_value: result.value,
+					action: "add"
 				};
 
 				// Get nodes and edges..
 				this.http.put(url, body).subscribe(
 					response => {
 						console.log("[tabular-view] \n Success on add:", response);
+
+						this.activeNode.data.push(result);
 					},
 					err => {
 						console.log("[tabular-view] \n Error on add:", err);
@@ -107,6 +109,7 @@ export class TabularViewComponent {
 					type: this.activeNode.type,
 					key_name: result.key,
 					key_value: result.value,
+					action: "edit"
 				};
 
 				// Get nodes and edges..
@@ -138,7 +141,7 @@ export class TabularViewComponent {
 					type: this.activeNode.type,
 					key_name: item.key,
 					key_value: item.value,
-					delete: true,
+					action: "delete"
 				};
 				var url = environment.apiURL + "/node/data";
 				console.log(url);
