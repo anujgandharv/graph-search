@@ -128,7 +128,7 @@ export class RelationshipViewComponent {
 			console.log("DATA", result);
 
 			if(result != false && result != undefined) {
-				var url = environment.apiURL + "/relationship";
+				var url = environment.apiURL + "/relationship/data";
 				var body = {
 					id: result.id,
 					source_ref: result.from,
@@ -188,7 +188,7 @@ export class RelationshipViewComponent {
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			if(result != false && result != undefined) {
-				var url = environment.apiURL + "/node";
+				var url = environment.apiURL + "/relationship/data";
 				var body = {
 					id: row.id,
 					key: item.key,
@@ -213,7 +213,7 @@ export class RelationshipViewComponent {
 		});
 	}
 
-	onDeleteItem(item, idx) {
+	onDeleteItem(row, item) {
 		let dialogRef = this.dialog.open(ConfirmDialog);
 		dialogRef.afterClosed().subscribe(result => {
 			if(result == true) {
@@ -221,7 +221,12 @@ export class RelationshipViewComponent {
 
 				var id = '123';
 				var key = "value";
-				var url = environment.apiURL + "/node/" + id;
+				var url = environment.apiURL + "/relationship/data";
+				var body = {
+					id: row.id,
+					key: item.key,
+					value: item.value,
+				};
 
 				// Get nodes and edges..
 				this.http.delete(url).subscribe(

@@ -65,9 +65,10 @@ export class TabularViewComponent {
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			if(result != false && result != undefined) {
-				var url = environment.apiURL + "/node";
+				var url = environment.apiURL + "/node/data";
 				var body = {
-					id: this.activeNode,
+					id: this.activeNode.id,
+					type: this.activeNode.type,
 					key_name: result.key,
 					key_value: result.value,
 				};
@@ -100,9 +101,10 @@ export class TabularViewComponent {
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			if(result != false && result != undefined) {
-				var url = environment.apiURL + "/node";
+				var url = environment.apiURL + "/node/data";
 				var body = {
-					id: this.activeNode,
+					id: this.activeNode.id,
+					type: this.activeNode.type,
 					key_name: result.key,
 					key_value: result.value,
 				};
@@ -133,11 +135,12 @@ export class TabularViewComponent {
 			if(result == true) {
 				var body = {
 					id: this.activeNode.id,
-					key: item.key,
-					value: item.value,
+					type: this.activeNode.type,
+					key_name: item.key,
+					key_value: item.value,
 					delete: true,
 				};
-				var url = environment.apiURL + "/node";
+				var url = environment.apiURL + "/node/data";
 				console.log(url);
 
 				// Delete item..
