@@ -78,7 +78,7 @@ export class TabularViewComponent {
 					response => {
 						console.log("[tabular-view] \n Success on add:", response);
 
-						this.activeNode.data.push(result);
+						// this.activeNode.data.push(result);
 					},
 					err => {
 						console.log("[tabular-view] \n Error on add:", err);
